@@ -1,0 +1,33 @@
+#include <iostream>
+#include<string>
+using namespace std;
+void reversewithtemp(string &str){
+    int len=str.length();
+    for(int i=0;i<len/2;i++){
+        int temp=str[i];
+        str[i]=str[len-1-i];
+        str[len-1-i]=temp;
+    }
+}
+void reversewithouttemp(string &str){
+    int len=str.length();
+    for(int i=0;i<len/2;i++){
+        str[i]^=str[len-1-i];
+        str[len-1-i]^=str[i];
+        str[i]^=str[len-1-i];
+    }
+}
+int main()
+{
+    string s1,s2;
+    cin>>s1;
+    cout<<"Reversed (With Temp):";
+    reversewithtemp(s1);
+    cout<<s1;
+    cin>>s2;
+    cout<<"Reversed (Without Temp):";
+    reversewithouttemp(s2);
+    cout<<s2;
+    
+    return 0;
+}
