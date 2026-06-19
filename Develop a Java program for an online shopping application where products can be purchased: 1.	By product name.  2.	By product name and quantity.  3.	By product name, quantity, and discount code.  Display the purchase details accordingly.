@@ -1,0 +1,26 @@
+import java.util.*;
+public class Main
+{   public static void purchase(String pname){
+        System.out.println("Product : "+pname);
+    }
+    public static void purchase(String pname,int quantity){
+        System.out.println("Product : "+pname);
+        System.out.println("Quantity : "+quantity);
+    }
+    public static void purchase(String pname,int quantity,String dcode){
+        System.out.println("Product : "+pname);
+        System.out.println("Quantity : "+quantity);
+        System.out.println("Discount Code : "+dcode);
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String input=sc.nextLine();
+	    String[] words=input.split("\\s+");
+	    int qty = Integer.parseInt(words[1]);
+	    purchase(words[0]);
+	    System.out.println();
+	    purchase(words[0],qty);
+	     System.out.println();
+	    purchase(words[0],qty,words[2]);
+	}
+}
